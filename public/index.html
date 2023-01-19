@@ -11,72 +11,9 @@
         <script src="main.js"></script>
     </head>
     <body onload="loaded();">
-        <img id="banner" src="./feuerherz.png"  width="100%" onclick="random()">
-        <p id="rquote" class="title" onclick="random()">
-        </p>
-
-        <div class="center"> <a href="/chat"> <img src="./chat.png"  width="20px" height="20px"> </a></div>
-        <div class="center"> <a href="/friends"> <img src="./friends.png"  width="18px" height="18px"> </a></div>
-
         <h4 class="text">
             welcome to my website!
         </h4>
-
-        <p class="text">
-            this website is still in the making but i will post here about my projects and interests.
-        </p>
-        
-
-        <h4 class="text">
-            about me
-        </h4>
-
-        <p class="text">
-            my name is joe aka <b>feuerherz</b>. i am currently a student from germany.
-        </p>
-
-
-
-        <div style="display:inline-block;vertical-align:top;">
-            <h4 class="text">
-                github
-            </h4>
-        </div>
-        <div style="display:inline-block;">
-            <img src="https://avatars.githubusercontent.com/u/83557178?v=4"  width="20px" height="20px" style="margin-top: 14px; image-rendering: pixelated;">
-        </div>
-
-        <p class="textGithub" id="github";>
-            loading
-        </p>
-
-        <div style="display:inline-block;vertical-align:top;">
-            <h4 class="text">
-                chess
-            </h4>
-        </div>
-        <div style="display:inline-block;">
-            <img src="https://images.chesscomfiles.com/uploads/v1/user/211298015.afcf9317.200x200o.8a66302b8d86.jpg"  width="20px" height="20px" style="margin-top: 14px; image-rendering: pixelated;">
-        </div>
-
-        <p class="textGithub" id="chess";>
-            loading
-        </p>
-
-
-        <div style="display:inline-block;vertical-align:top;">
-            <h4 class="text">
-                devRant
-            </h4>
-        </div>
-
-
-        <p class="textGithub" id="devRant";>
-            loading
-        </p>
-
-
-        <img src="cat.gif" alt="cat pixel art" class="center"> 
 
         <div class='footer-overlay'>
             <p class="textW">
@@ -85,5 +22,28 @@
         </div>
     </body>
 
+    <style>
+.footer-overlay {
+    position: fixed;
+    bottom: 0px;
+    left: 0;
+    right: 0;
+    margin: 10px;
+    background-color: rgba(0, 0, 0, 1);
+    height: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@font-face {
+    font-family: 'space';
+    src: url('webfont.eot'); /* IE9 Compat Modes */
+    src: url('webfont.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+         url('webfont.woff') format('woff'), /* Modern Browsers */
+         url('webfont.ttf')  format('truetype'), /* Safari, Android, iOS */
+         url('webfont.svg#svgFontName') format('svg'); /* Legacy iOS */
+}
+    </style>
 
 </html>

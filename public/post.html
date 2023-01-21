@@ -55,7 +55,7 @@
 
           response.comments.forEach(element => {
 
-            comments += '<hr class = "hr"><div class="item" ">'
+            comments += '<div class="item" ">'
             comments += `
 
     
@@ -63,8 +63,11 @@
           
           <h4 class="link">
                 ${element.username}
-            </h4>`
+            </h4>
 
+            <h4 class="link" style="float: right">
+                ${element.profile_votes}
+            </h4>`
 
             if (element.image == 1) {
               comments += '<p style="margin: 2px; color: white; text-decoration: none;"  >' + element.comment + '</p><img src=http://stardash.de:2000/image/' + element.image_path.replaceAll(" ", "SPACESYMBOL") + ' style="width: 100%; max-height: auto; border-radius: 10px"><br></div>'

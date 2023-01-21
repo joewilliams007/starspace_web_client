@@ -17,13 +17,13 @@ function getFeed(type) {
         response.feed.forEach(element => {
             if (element.image == 1) {
                 feed+=' <a href="http://stardash.de:7788/post/'+element.post_id+
-                '" style="text-decoration: none;" onclick="this.href="https://google.com";""><hr class = "hr"><div class="item" "><p class="link" style="margin: 2px; color: white"; text-decoration: none;>'
+                '" style="text-decoration: none;" onclick="this.href="https://google.com";""><div class="item" "><p class="link" style="margin: 2px; color: white"; text-decoration: none;>'
                 +element.content+'</p><img src=http://stardash.de:2000/image/'
-                +element.image_path.replaceAll(" ","SPACESYMBOL")+' style="width: 100%; max-height: auto; border-radius: 10px"><br></div> </a>'
+                +element.image_path.replaceAll(" ","SPACESYMBOL")+' style="width: 100%; max-height: auto; border-radius: 10px"><br></div> </a><hr class = "hr">'
               
             } else {
                 feed+='<a href="http://stardash.de:7788/post/'
-                +element.post_id+'" style="text-decoration: none;" onclick="this.href="https://google.com";""><hr class="hr"><div class="item" ><p style="margin: 2px; color: white text-decoration: none;" class="link">'
+                +element.post_id+'" style="text-decoration: none;" onclick="this.href="https://google.com";""><div class="item" ><p style="margin: 2px; color: white text-decoration: none;" class="link"><hr class = "hr">'
                 +element.content+'</p></div></a>'
             }
         });

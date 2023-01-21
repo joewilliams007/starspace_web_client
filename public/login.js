@@ -14,7 +14,7 @@ function submit() {
     document.getElementById('message').value = ""
     document.getElementById('password').value = ""
 
-    fetch("http://stardash.de:7788/login/"+username+"/"+password)
+    fetch("http://stardash.de:2000/login/"+username+"/"+password)
     .then(response => response.json())
     .then((response) => {
         alert(response)

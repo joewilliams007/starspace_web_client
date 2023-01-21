@@ -62,7 +62,11 @@
           <img src=http://stardash.de:2000/image/${element.profile_image_path.replaceAll(" ", "SPACESYMBOL")} width="20px" height="20px" style="float:left">
           
           <h4 class="link">
-                ${element.username} +${element.profile_votes}
+                ${element.username}
+            </h4>
+
+            <h4 class="link" style="float: right">
+                ${element.profile_votes}
             </h4>`
 
             if (element.image == 1) {

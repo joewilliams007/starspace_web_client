@@ -48,16 +48,17 @@ fetch("http://stardash.de:2000/comments/"+window.location.pathname.split("/")[2]
     console.log(response)
     var comments;
 
-    comments+=`<div style="display:inline-block;vertical-align:top;">
+        response.comments.forEach(element => {
+
+          comments+=`<div style="display:inline-block;vertical-align:top;">
             <h4 class="link">
-                ${response.username}
+                ${element.username}
             </h4>
         </div>
         <div style="display:inline-block;">
-            <img src="${response.profile_image_path}"  width="20px" height="20px" style="margin-top: 14px; image-rendering: pixelated;">
+            <img src="${element.profile_image_path}"  width="20px" height="20px" style="margin-top: 14px; image-rendering: pixelated;">
         </div>`
 
-        response.comments.forEach(element => {
             if (element.image == 1) {
               comments+='<hr class = "hr"><div class="item" "><p class="link" style="margin: 2px; color: white"; >'+element.comment+'</p><img src=http://stardash.de:2000/image/'+element.image_path.replaceAll(" ","SPACESYMBOL")+' style="width: 100%; max-height: auto; border-radius: 10px"><br></div>'
               

@@ -11,7 +11,7 @@
   
         <script src="main.js"></script>
     </head>
-    <body style="background-color:#404258" onload="loaded();">
+    <body style="background-color:#404258; scroll-behavior: smooth;" onload="loaded();">
       
     
         <div id="mySidebar" class="sidebar">
@@ -20,7 +20,7 @@
             <a href="#" onclick="getFeed('top')">Top</a>
           </div>
          
-            <h3 onclick="openNav()" style="font-family: dead_space; margin: 10px; color: white;" id="title">
+            <h3 class="navtitle" onclick="openNav()" style="font-family: dead_space; margin: 10px; color: white;" id="title">
               StarSpace
           </h3>
          
@@ -132,6 +132,13 @@ body {
   top: 0;
   right: 25px;
   top: 25px;
+}
+
+.navtitle {
+
+  position: sticky;
+  top: 0;
+
 }
 
 

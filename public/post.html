@@ -9,7 +9,14 @@
         <link href="css/style.css" rel="stylesheet">
 
   
-        <script src="public/main.js"></script>
+        <script>
+
+function loaded() {
+    alert('Please leave this page '+window.location.pathname);
+    getItem();
+}
+
+        </script>
     </head>
     <body style="background-color:#404258" onload="loaded();">
       
@@ -37,12 +44,12 @@ html,body
 
 @font-face {
   font-family: 'dead_space';
-  src: URL('public/space.ttf') format('truetype');
+  src: URL('space.ttf') format('truetype');
 }
 
 @font-face {
   font-family: 'nunito';
-  src: URL('public/nunito.ttf') format('truetype');
+  src: URL('nunito.ttf') format('truetype');
 }
 
 .item {

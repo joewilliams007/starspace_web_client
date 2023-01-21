@@ -18,7 +18,6 @@ app.get("/", (req, res) => {
 })
 
 app.get("/post/:id?", (req, res) => {
-    console.log("lol")
     res.sendFile(path.join(__dirname, '/public/post.html'));
 })
 

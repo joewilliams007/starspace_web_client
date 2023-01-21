@@ -27,7 +27,7 @@ function getFeed(type) {
                 +element.content+'</p></div> </a><hr class = "hr">'
         
             }
-            feed  +=`<p style='color: white; font-family: nunito'>comments: `+element.comments+` votes: `+element.votes+`</p></div>`
+            feed  +=`<p style='color: white; font-family: nunito'>comments: `+element.comments+` votes: `+element.votes+`</p>`
         });
 
         document.getElementById("feed").innerHTML = feed.replace("undefined","");

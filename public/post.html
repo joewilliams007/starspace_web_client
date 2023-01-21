@@ -12,7 +12,7 @@
         <script>
 
 function loaded() {
-    alert('Please leave this page '+window.location.pathname);
+    alert('Please leave this page '+window.location.pathname.split("/")[2]);
     getItem();
 }
 

@@ -14,16 +14,6 @@ function getFeed(type) {
         var feed;
 
 
-        feed+=`<div style="display:inline-block;vertical-align:top;">
-            <h4 class="text">
-                ${response.username}
-            </h4>
-        </div>
-        <div style="display:inline-block;">
-            <img src="${response.profile_image_path}"  width="20px" height="20px" style="margin-top: 14px; image-rendering: pixelated;">
-        </div>`
-
-
         response.feed.forEach(element => {
             if (element.image == 1) {
                 feed+=' <a href="http://localhost:7788/post/'+element.post_id+'" onclick="this.href="https://google.com";""> <hr class = "hr"><div class="item" "><p class="link" style="margin: 2px; color: white"; >'+element.content+'</p><img src=http://stardash.de:2000/image/'+element.image_path.replaceAll(" ","SPACESYMBOL")+' style="width: 100%; max-height: auto; border-radius: 10px"><br></div> </a>'

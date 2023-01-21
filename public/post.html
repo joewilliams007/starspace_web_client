@@ -52,7 +52,7 @@
         .then((response) => {
           console.log(response)
           var comments;
-
+          comments+='<hr class = "hr">'
           response.comments.forEach(element => {
 
             comments += '<div class="item" ">'

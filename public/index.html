@@ -13,9 +13,7 @@
     </head>
     <body style="background-color:rgb(242, 247, 247)" onload="loaded();">
       
-      <p id="feed">
-        loading
-      </p>
+    
         <div id="mySidebar" class="sidebar">
             <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
             <a href="#">All</a>
@@ -27,10 +25,24 @@
             <button class="openbtn" onclick="openNav()">☰ StarSpace</button>  
           </div>
 
+          <p id="feed">
+            loading
+          </p>
     <style>
 
+@font-face {
+  font-family: 'dead_space';
+  src: URL('space.ttf') format('truetype');
+}
+
+.item {
+  background-color: rgba(0, 0, 0, 1);
+  border-radius: 5px;
+  margin: 2px;
+}
 .textW {
     color: aliceblue;
+    padding: 2px;
 }
 .footer-overlay {
     position: fixed;

@@ -11,10 +11,10 @@ function getFeed() {
 
         var feed;
         response.feed.forEach(element => {
-            feed+=element.content+"<br><br>"
+            feed+='<div class="item"><p class="textW">'+element.content+'</p></div>'
         });
 
-        document.getElementById("feed").innerHTML = feed;
+        document.getElementById("feed").innerHTML = feed.replace("undefined","");
     })
     .catch(err => console.log(err))
 }

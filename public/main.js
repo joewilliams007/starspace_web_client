@@ -39,3 +39,8 @@ function openNav() {
     document.getElementById("main").style.marginLeft= "0";
     document.getElementById("openbtn").style.visibility = "visible"
   }
+
+  function loadedPost() {
+    alert('Please leave this page '+window.location.pathname);
+    getItem();
+}

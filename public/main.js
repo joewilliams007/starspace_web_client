@@ -39,6 +39,10 @@ function getFeed(type) {
     .catch(err => console.log(err))
 }
 
+function download() {
+    
+}
+
 function openNav() {
     document.getElementById("mySidebar").style.width = "250px";
     document.getElementById("main").style.marginLeft = "250px";

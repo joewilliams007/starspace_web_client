@@ -36,9 +36,10 @@
             post += '<p style="margin: 2px; color: white; text-decoration: none;"; >' + response.content + '</p><img src=http://stardash.de:2000/image/' + response.image_path.replaceAll(" ", "SPACESYMBOL") + ' style="width: 100%; max-height: auto; border-radius: 10px"><br></div> </a>'
 
           } else {
-            post += '<p style="margin: 2px; color: white; text-decoration: none;" >' + response.content + '</p>'
+            post += '<p style="margin: 2px; color: white; text-decoration: none;" >' + response.content
+              + '<p style="margin: 2px; color: grey;>'+response.votes+'</p></p>'
             +'</div>'
-            +'<p style="margin: 2px; color: grey;>sads'+response.votes+'</p>'
+        
           }
 
           document.getElementById("post").innerHTML = post.replace("undefined", "");

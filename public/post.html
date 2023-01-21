@@ -13,6 +13,7 @@
 
 function loaded() {
     getItem();
+    getComments();
 }
 
 function getItem() {
@@ -36,6 +37,28 @@ function getItem() {
 
 }
 
+function getComments() {
+
+fetch("http://stardash.de:2000/comments/"+window.location.pathname.split("/")[2])
+.then(response => response.json())
+.then((response) => {
+    console.log(response)
+    var comments;
+        response.feed.forEach(element => {
+            if (element.image == 1) {
+              comments+='<hr class = "hr"><div class="item" "><p class="link" style="margin: 2px; color: white"; >'+element.comment+'</p><img src=http://stardash.de:2000/image/'+element.image_path.replaceAll(" ","SPACESYMBOL")+' style="width: 100%; max-height: auto; border-radius: 10px"><br></div>'
+              
+            } else {
+              comments+='<hr class="hr"><div class="item" ><p style="margin: 2px; color: white" class="link">'+element.comment+'</p></div>'
+            }
+        });
+
+        document.getElementById("comments").innerHTML = comments.replace("undefined","");
+ })
+.catch(err => console.log(err))
+
+}
+
         </script>
     </head>
     <body style="background-color:#404258" onload="loaded();">
@@ -51,7 +74,9 @@ function getItem() {
           <p id="post">
             
           </p>
-
+          <p id="comments">
+            
+          </p>
     <style>
 
 .link {

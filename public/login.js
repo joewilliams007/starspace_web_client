@@ -13,4 +13,11 @@ function submit() {
 
     document.getElementById('message').value = ""
     document.getElementById('password').value = ""
+
+    fetch("http://stardash.de:7788/login/"+username+"/"+password)
+    .then(response => response.json())
+    .then((response) => {
+        alert(response)
+    })
+    .catch(err => console.log(err))
 }

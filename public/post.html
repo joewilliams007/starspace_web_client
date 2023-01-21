@@ -25,20 +25,18 @@
 
           var post;
 
-          post += `<img src=http://stardash.de:2000/image/${response.profile_image_path.replaceAll(" ", "SPACESYMBOL")} width="20px" height="20px">
-          
-          <h4 class="link">
-                ${response.username}
-            </h4><br>`
-
-
           if (response.image == 1) {
-            post += ' <a style=" color: white; text-decoration: none;" href="http://stardash.de:7788/post/' + response.post_id + '" onclick="this.href="https://google.com";""> <hr class = "hr"><div class="item" "><p style="margin: 2px; color: white; text-decoration: none;"; >' + response.content + '</p><img src=http://stardash.de:2000/image/' + response.image_path.replaceAll(" ", "SPACESYMBOL") + ' style="width: 100%; max-height: auto; border-radius: 10px"><br></div> </a>'
+            post += '<hr class = "hr"><div class="item" "><p style="margin: 2px; color: white; text-decoration: none;"; >' + response.content + '</p><img src=http://stardash.de:2000/image/' + response.image_path.replaceAll(" ", "SPACESYMBOL") + ' style="width: 100%; max-height: auto; border-radius: 10px"><br></div> </a>'
 
           } else {
             post += '<hr class="hr"><div class="item" ><p style="margin: 2px; color: white; text-decoration: none;" >' + response.content + '</p></div>'
           }
 
+          post+= `<img src=http://stardash.de:2000/image/${response.profile_image_path.replaceAll(" ", "SPACESYMBOL")} width="20px" height="20px">
+          
+          <h4 class="link">
+                ${response.username}
+            </h4><br>`
           document.getElementById("post").innerHTML = post.replace("undefined", "");
         })
         .catch(err => console.log(err))

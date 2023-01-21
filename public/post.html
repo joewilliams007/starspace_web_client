@@ -62,10 +62,10 @@ fetch("http://stardash.de:2000/comments/"+window.location.pathname.split("/")[2]
       
 
             if (element.image == 1) {
-              comments+='<br><p class="link" style="margin: 2px; color: white"; >'+element.comment+'</p><img src=http://stardash.de:2000/image/'+element.image_path.replaceAll(" ","SPACESYMBOL")+' style="width: 100%; max-height: auto; border-radius: 10px"><br></div>'
+              comments+='<p class="link" style="margin: 2px; color: white"; >'+element.comment+'</p><img src=http://stardash.de:2000/image/'+element.image_path.replaceAll(" ","SPACESYMBOL")+' style="width: 100%; max-height: auto; border-radius: 10px"><br></div>'
               
             } else {
-              comments+='<br><p style="margin: 2px; color: white" class="link">'+element.comment+'</p></div>'
+              comments+='<p style="margin: 2px; color: white" class="link">'+element.comment+'</p></div>'
             }
         });
 

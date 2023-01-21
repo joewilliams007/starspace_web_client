@@ -20,7 +20,7 @@ function getFeed(type) {
             </h4>
         </div>
         <div style="display:inline-block;">
-            <img src="  ${response.profile_image_path}"  width="20px" height="20px" style="margin-top: 14px; image-rendering: pixelated;">
+            <img src="${response.profile_image_path}"  width="20px" height="20px" style="margin-top: 14px; image-rendering: pixelated;">
         </div>`
 
 

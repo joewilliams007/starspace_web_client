@@ -22,6 +22,12 @@ html,body
   font-family: nunito;
   margin: 10px;
 }
+
+.nunito {
+    font-family: nunito;
+    margin: 10px;
+}
+
 .textW {
     color: aliceblue;
     padding: 2px;

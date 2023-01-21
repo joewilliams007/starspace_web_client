@@ -8,7 +8,13 @@ function getFeed() {
     .then(response => response.json())
     .then((response) => {
         console.log(response)
-        document.getElementById("feed").innerHTML = response.version_name;
+
+        var feed;
+        response.feed.forEach(element => {
+            feed+=element.content+"<br><br>"
+        });
+
+        document.getElementById("feed").innerHTML = feed;
     })
     .catch(err => console.log(err))
 }

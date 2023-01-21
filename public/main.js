@@ -24,10 +24,12 @@ function getFeed(type) {
             } else {
                 feed+=' <a href="http://stardash.de:7788/post/'+element.post_id+
                 '" style="text-decoration: none;" onclick="this.href="https://google.com";""><div class="item" "><p class="link" style="margin: 2px; color: white"; text-decoration: none;>'
-                +element.content+'</p></div> </a><hr class = "hr">'
+                +element.content+'</p>'
+                +`<p style='color: white; font-family: nunito'>comments: `+element.comments+` votes: `+element.votes+`</p>`
+                +'</div> </a><hr class = "hr">'
         
             }
-            feed  +=`<p style='color: white; font-family: nunito'>comments: `+element.comments+` votes: `+element.votes+`</p>`
+
         });
 
         document.getElementById("feed").innerHTML = feed.replace("undefined","");

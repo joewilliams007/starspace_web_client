@@ -10,7 +10,7 @@ var jsonParser = bodyParser.json()
 
 app.listen(
     PORT,
-    () => console.log("Its alive on http://localhost:" + PORT + "")
+    () => console.log("Its alive on http://stardash.de:" + PORT + "")
 )
 
 app.get("/", (req, res) => {

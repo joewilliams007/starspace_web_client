@@ -1,221 +1,229 @@
 <!DOCTYPE <!DOCTYPE html>
 <html lang="en">
-    
-    <head >
-        <title class="link">StarSpace</title>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link href="/css/style.css" rel="stylesheet">
 
-  
-        <script>
+<head>
+  <title class="link">StarSpace</title>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="/css/style.css" rel="stylesheet">
 
-function loaded() {
-    getItem();
-    getComments();
-}
 
-function getItem() {
+  <script>
 
-    fetch("http://stardash.de:2000/post/"+window.location.pathname.split("/")[2])
-    .then(response => response.json())
-    .then((response) => {
-        console.log(response)
+    function loaded() {
+      getItem();
+      getComments();
+    }
 
-       var post;
+    function getItem() {
 
-       post+= `<img src=http://stardash.de:2000/image/${response.profile_image_path.replaceAll(" ","SPACESYMBOL")} width="20px" height="20px">
+      fetch("http://stardash.de:2000/post/" + window.location.pathname.split("/")[2])
+        .then(response => response.json())
+        .then((response) => {
+          console.log(response)
+
+          var post;
+
+          post += `<img src=http://stardash.de:2000/image/${response.profile_image_path} width="20px" height="20px">
           
           <h4 class="link">
                 ${response.username}
             </h4>`
 
 
-            if (response.image == 1) {
-              post+=' <a style=" color: white; text-decoration: none;" href="http://stardash.de:7788/post/'+response.post_id+'" onclick="this.href="https://google.com";""> <hr class = "hr"><div class="item" "><p style="margin: 2px; color: white; text-decoration: none;"; >'+response.content+'</p><img src=http://stardash.de:2000/image/'+response.image_path.replaceAll(" ","SPACESYMBOL")+' style="width: 100%; max-height: auto; border-radius: 10px"><br></div> </a>'
-              
-            } else {
-              post+='<hr class="hr"><div class="item" ><p style="margin: 2px; color: white; text-decoration: none;" >'+response.content+'</p></div>'
-            }
-      
-        document.getElementById("post").innerHTML = post.replace("undefined","");
-    })
-    .catch(err => console.log(err))
+          if (response.image == 1) {
+            post += ' <a style=" color: white; text-decoration: none;" href="http://stardash.de:7788/post/' + response.post_id + '" onclick="this.href="https://google.com";""> <hr class = "hr"><div class="item" "><p style="margin: 2px; color: white; text-decoration: none;"; >' + response.content + '</p><img src=http://stardash.de:2000/image/' + response.image_path.replaceAll(" ", "SPACESYMBOL") + ' style="width: 100%; max-height: auto; border-radius: 10px"><br></div> </a>'
 
-}
+          } else {
+            post += '<hr class="hr"><div class="item" ><p style="margin: 2px; color: white; text-decoration: none;" >' + response.content + '</p></div>'
+          }
 
-function getComments() {
+          document.getElementById("post").innerHTML = post.replace("undefined", "");
+        })
+        .catch(err => console.log(err))
 
-fetch("http://stardash.de:2000/comments/"+window.location.pathname.split("/")[2])
-.then(response => response.json())
-.then((response) => {
-    console.log(response)
-    var comments;
+    }
 
-        response.comments.forEach(element => {
+    function getComments() {
 
-          comments+='<hr class = "hr"><div class="item" ">'
-          comments+=`
+      fetch("http://stardash.de:2000/comments/" + window.location.pathname.split("/")[2])
+        .then(response => response.json())
+        .then((response) => {
+          console.log(response)
+          var comments;
+
+          response.comments.forEach(element => {
+
+            comments += '<hr class = "hr"><div class="item" ">'
+            comments += `
 
     
-          <img src=http://stardash.de:2000/image/${element.profile_image_path.replaceAll(" ","SPACESYMBOL")} width="20px" height="20px">
+          <img src=http://stardash.de:2000/image/${element.profile_image_path.replaceAll(" ", "SPACESYMBOL")} width="20px" height="20px">
           
           <h4 class="link">
                 ${element.username}
             </h4>`
-      
+
 
             if (element.image == 1) {
-              comments+='<p style="margin: 2px; color: white; text-decoration: none;"  >'+element.comment+'</p><img src=http://stardash.de:2000/image/'+element.image_path.replaceAll(" ","SPACESYMBOL")+' style="width: 100%; max-height: auto; border-radius: 10px"><br></div>'
-              
+              comments += '<p style="margin: 2px; color: white; text-decoration: none;"  >' + element.comment + '</p><img src=http://stardash.de:2000/image/' + element.image_path.replaceAll(" ", "SPACESYMBOL") + ' style="width: 100%; max-height: auto; border-radius: 10px"><br></div>'
+
             } else {
-              comments+='<p style="margin: 2px; color: white ; text-decoration: none;" >'+element.comment+'</p></div>'
+              comments += '<p style="margin: 2px; color: white ; text-decoration: none;" >' + element.comment + '</p></div>'
             }
-        });
+          });
 
-        document.getElementById("comments").innerHTML = comments.replace("undefined","");
- })
-.catch(err => console.log(err))
+          document.getElementById("comments").innerHTML = comments.replace("undefined", "");
+        })
+        .catch(err => console.log(err))
 
-}
+    }
 
-        </script>
-    </head>
-    <body style="background-color:#404258" onload="loaded();">
-      
-  
-         
-            <h3 style="font-family: dead_space; margin: 10px; color: white;" id="title">
-              <a href="/" class="link">StarSpace</a>
-            
-          </h3>
-         
+  </script>
+</head>
 
-          <p id="post">
-            
-          </p>
-          <p id="comments">
-            
-          </p>
-    <style>
-
-.link {
-    text-decoration: none;
-    color: #FFFFFF;
-}
-
-html,body
-{
-    width: 100%;
-    height: 100%;
-    margin: 0px;
-    padding: 0px;
-    overflow-x: hidden; 
-}
-
-@font-face {
-  font-family: 'dead_space';
-  src: URL('/space.ttf') format('truetype');
-}
-
-@font-face {
-  font-family: 'nunito';
-  src: URL('/nunito.ttf') format('truetype');
-}
-
-.item {
-  font-family: nunito;
-  margin: 10px;
-}
-.textW {
-    color: aliceblue;
-    padding: 2px;
-}
-.footer-overlay {
-    position: fixed;
-    bottom: 0px;
-    left: 0;
-    right: 0;
-    background-color: rgba(0, 0, 0, 1);
-    height: 25px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-hr {
-    border: none;
-    height: 1px;
-    /* Set the hr color */
-    color:#474E68; /* old IE */
-    background-color: #474E68; /* Modern Browsers */
-}
-
-body {
-  font-family: "Lato", sans-serif;
-}
-
-.sidebar {
-  height: 100%;
-  width: 0;
-  position: fixed;
-  z-index: 1;
-  top: 0;
-  left: 0;
-  background-color: #474E68;
-  overflow-x: hidden;
-  transition: 0.5s;
-  padding-top: 60px;
-}
-
-.sidebar a {
-  padding: 8px 8px 8px 32px;
-  text-decoration: none;
-  font-size: 25px;
-  color: #818181;
-  display: block;
-  transition: 0.3s;
-}
-
-.sidebar a:hover {
-  color: #f1f1f1;
-}
-
-.sidebar .closebtn {
-  position: absolute;
-  top: 0;
-  right: 25px;
-  font-size: 36px;
-  margin-left: 50px;
-}
-
-.openbtn {
-  font-size: 10px;
-  cursor: pointer;
-  color: white;
-  background-color:#404258;
-  padding: 10px;
-  border: none;
-  position: absolute;
-  top: 0;
-  right: 25px;
-  top: 25px;
-}
+<body style="background-color:#404258" onload="loaded();">
 
 
-#main {
-  transition: margin-left .5s;
-  padding: 16px;
-}
 
-/* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
-@media screen and (max-height: 450px) {
-  .sidebar {padding-top: 15px;}
-  .sidebar a {font-size: 18px;}
-}
+  <h3 style="font-family: dead_space; margin: 10px; color: white;" id="title">
+    <a href="/" class="link">StarSpace</a>
 
-    </style>
+  </h3>
+
+
+  <p id="post">
+
+  </p>
+  <p id="comments">
+
+  </p>
+  <style>
+    .link {
+      text-decoration: none;
+      color: #FFFFFF;
+    }
+
+    html,
+    body {
+      width: 100%;
+      height: 100%;
+      margin: 0px;
+      padding: 0px;
+      overflow-x: hidden;
+    }
+
+    @font-face {
+      font-family: 'dead_space';
+      src: URL('/space.ttf') format('truetype');
+    }
+
+    @font-face {
+      font-family: 'nunito';
+      src: URL('/nunito.ttf') format('truetype');
+    }
+
+    .item {
+      font-family: nunito;
+      margin: 10px;
+    }
+
+    .textW {
+      color: aliceblue;
+      padding: 2px;
+    }
+
+    .footer-overlay {
+      position: fixed;
+      bottom: 0px;
+      left: 0;
+      right: 0;
+      background-color: rgba(0, 0, 0, 1);
+      height: 25px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    hr {
+      border: none;
+      height: 1px;
+      /* Set the hr color */
+      color: #474E68;
+      /* old IE */
+      background-color: #474E68;
+      /* Modern Browsers */
+    }
+
+    body {
+      font-family: "Lato", sans-serif;
+    }
+
+    .sidebar {
+      height: 100%;
+      width: 0;
+      position: fixed;
+      z-index: 1;
+      top: 0;
+      left: 0;
+      background-color: #474E68;
+      overflow-x: hidden;
+      transition: 0.5s;
+      padding-top: 60px;
+    }
+
+    .sidebar a {
+      padding: 8px 8px 8px 32px;
+      text-decoration: none;
+      font-size: 25px;
+      color: #818181;
+      display: block;
+      transition: 0.3s;
+    }
+
+    .sidebar a:hover {
+      color: #f1f1f1;
+    }
+
+    .sidebar .closebtn {
+      position: absolute;
+      top: 0;
+      right: 25px;
+      font-size: 36px;
+      margin-left: 50px;
+    }
+
+    .openbtn {
+      font-size: 10px;
+      cursor: pointer;
+      color: white;
+      background-color: #404258;
+      padding: 10px;
+      border: none;
+      position: absolute;
+      top: 0;
+      right: 25px;
+      top: 25px;
+    }
+
+
+    #main {
+      transition: margin-left .5s;
+      padding: 16px;
+    }
+
+    /* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
+    @media screen and (max-height: 450px) {
+      .sidebar {
+        padding-top: 15px;
+      }
+
+      .sidebar a {
+        font-size: 18px;
+      }
+    }
+  </style>
 
 
 </html>

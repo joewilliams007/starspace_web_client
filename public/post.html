@@ -24,10 +24,10 @@ function getItem() {
 
        
             if (element.image == 1) {
-                feed+=' <a href="http://localhost:7788/post/'+element.post_id+'" onclick="this.href="https://google.com";""> <hr class = "hr"><div class="item" "><p style="margin: 2px; color: white"; >'+element.content+'</p><img src=http://stardash.de:2000/image/'+element.image_path.replaceAll(" ","SPACESYMBOL")+' style="width: 100%; max-height: auto; border-radius: 10px"><br></div> </a>'
+                feed+=' <a href="http://localhost:7788/post/'+cpost_id+'" onclick="this.href="https://google.com";""> <hr class = "hr"><div class="item" "><p style="margin: 2px; color: white"; >'+response.content+'</p><img src=http://stardash.de:2000/image/'+response.image_path.replaceAll(" ","SPACESYMBOL")+' style="width: 100%; max-height: auto; border-radius: 10px"><br></div> </a>'
               
             } else {
-                feed+='<hr class="hr"><div class="item" ><p style="margin: 2px; color: white" >'+element.content+'</p></div>'
+                feed+='<hr class="hr"><div class="item" ><p style="margin: 2px; color: white" >'+response.content+'</p></div>'
             }
       
         document.getElementById("feed").innerHTML = feed.replace("undefined","");

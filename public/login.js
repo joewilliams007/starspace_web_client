@@ -18,6 +18,7 @@ function submit() {
     .then(response => response.json())
     .then((response) => {
         alert(response)
+        console.log(response)
     })
     .catch(err => console.log(err))
 }

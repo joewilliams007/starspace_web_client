@@ -11,7 +11,7 @@ function submit() {
 
    // setCookie("username", username, 30);
 
-    document.getElementById('message').value = ""
+    document.getElementById('username').value = ""
     document.getElementById('password').value = ""
 
     fetch("http://stardash.de:2000/login/"+username+"/"+password)

@@ -25,6 +25,10 @@ app.get("/profile/:id?", (req, res) => {
     res.sendFile(path.join(__dirname, '/public/profile.html'));
 })
 
+app.get("/login", (req, res) => {
+    res.sendFile(path.join(__dirname, '/public/login.html'));
+})
+
 process.on('uncaughtException', err => {
     console.error(err && err.stack)
 });

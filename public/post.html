@@ -71,8 +71,9 @@
             } else {
               comments += '<p style="margin: 2px; color: white ; text-decoration: none;" >' + element.comment + '</p></div>'
             }
+             comments+='<hr class = "hr">'
           });
-          comments+='<hr class = "hr">'
+          
           document.getElementById("comments").innerHTML = comments.replace("undefined", "");
         })
         .catch(err => console.log(err))

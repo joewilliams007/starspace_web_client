@@ -53,14 +53,13 @@ fetch("http://stardash.de:2000/comments/"+window.location.pathname.split("/")[2]
           comments+='<hr class = "hr"><div class="item" ">'
           comments+=`
 
-    <div style="display: flex">
-     
+    
           <img src=http://stardash.de:2000/image/${element.profile_image_path.replaceAll(" ","SPACESYMBOL")} width="20px" height="20px">
           
           <h4 class="link">
                 ${element.username}
-            </h4>
-          </div>`
+            </h4>`
+      
 
             if (element.image == 1) {
               comments+='<br><p class="link" style="margin: 2px; color: white"; >'+element.comment+'</p><img src=http://stardash.de:2000/image/'+element.image_path.replaceAll(" ","SPACESYMBOL")+' style="width: 100%; max-height: auto; border-radius: 10px"><br></div>'

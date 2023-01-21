@@ -37,8 +37,8 @@
 
           } else {
             post += '<p style="margin: 2px; color: white; text-decoration: none;" >' + response.content + '</p>'
-            +'<br><p style="margin: 2px; color: grey;>'+response.votes+'</p>'
             +'</div>'
+            +'<p style="margin: 2px; color: grey;>'+response.votes+'</p>'
           }
 
           document.getElementById("post").innerHTML = post.replace("undefined", "");

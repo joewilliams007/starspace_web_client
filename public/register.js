@@ -1,4 +1,4 @@
-function submit() {
+function register() {
     const username = document.getElementById('username').value
     const password = document.getElementById('password').value
     const email = document.getElementById('email').value

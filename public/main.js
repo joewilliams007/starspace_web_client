@@ -69,6 +69,7 @@ function checkCookie() {
             console.log(response)
             if (response.success == true) {
                 document.getElementById("username").innerHTML = response.username;
+                document.getElementById("logoutbtn").visiblity = "hidden"
                 if (response.image == 1) {
                     document.getElementById("profile_picture").src = "http://stardash.de:2000/image/"+response.image_path; 
                 }

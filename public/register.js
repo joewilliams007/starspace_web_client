@@ -1,20 +1,23 @@
 function submit() {
     const username = document.getElementById('username').value
     const password = document.getElementById('password').value
+    const email = document.getElementById('email').value
 
-    if (username.length < 1) {
-        return alert("enter your username")
+    if (username.length < 3) {
+        return alert("enter your username atleast 5 characters")
     }
     if (password.length < 5) {
-        return alert("enter your password")
+        return alert("enter your password atleast 5 characters")
     }
-
-   // setCookie("username", username, 30);
+    if (email.length < 5 || !email.includes("@")) {
+        return alert("enter a valid email")
+    }
 
     document.getElementById('username').value = ""
     document.getElementById('password').value = ""
+    document.getElementById('email').value = ""
 
-    fetch("http://stardash.de:2000/login/"+username+"/"+password)
+    fetch("http://stardash.de:2000/register/"+username+"/"+email+"/"+password)
     .then(response => response.json())
     .then((response) => {
         
@@ -38,7 +41,6 @@ function setCookie(cname,cvalue,exdays) {
     document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
 }
 
-
-function register() {
-    window.location.replace("http://stardash.de:7788/register");
+function login() {
+     window.location.replace("http://stardash.de:7788/login");
 }

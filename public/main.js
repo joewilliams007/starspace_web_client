@@ -72,11 +72,13 @@ function checkCookie() {
                 if (response.image == 1) {
                     document.getElementById("profile_picture").src = "http://stardash.de:2000/image/"+response.image_path; 
                 }
-            } else {
-                document.getElementById("logoutbtn").style.visibility = "hidden"
             }
         })
         .catch(err => console.log(err))
+    }
+
+    if (session!="") {
+        document.getElementById("logoutbtn").style.visibility = "hidden"
     }
 }
 

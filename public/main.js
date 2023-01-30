@@ -98,3 +98,7 @@ function openNav() {
     document.getElementById("openbtn").style.visibility = "visible"
 }
 
+function logout() {
+    document.cookie.split(";").forEach(function(c) { document.cookie = c.replace(/^ +/, "").replace(/=.*/, "=;expires=" + new Date().toUTCString() + ";path=/"); });
+    window.location.replace("http://stardash.de:7788/");
+}

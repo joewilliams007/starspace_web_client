@@ -20,10 +20,10 @@ function submit() {
         
         console.log(response)
         if (response.success == true) {
-            alert(response.session)
-
             setCookie("session", response.session, 90);
             setCookie("user_id", response.user_id, 90);
+
+            window.location.replace("http://stardash.de:7788/");
         } else {
             alert(response.message)
         }

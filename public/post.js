@@ -97,6 +97,9 @@ function getComments() {
             comments += '<hr class = "hr">'
             response.comments.forEach(element => {
 
+                try {
+
+                    
                 comments += '<div class="item" ">'
                 comments += `
 
@@ -116,9 +119,38 @@ function getComments() {
                     comments += '<p style="margin: 2px; color: white ; text-decoration: none;" >' + element.comment + '</p></div>'
                 }
                 comments += '<hr class = "hr">'
+
+
+
+
+            } catch (err) {
+                comments += '<div class="item" ">'
+                comments += `
+
+
+      <img src=https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png width="20px" height="20px" style="float:left">
+      
+      <h4 class="link">
+        <a href="http://stardash.de:7788/profile/${element.user_id}" style="text-decoration: none; color: white" onclick="this.href="https://google.com";"">
+            ${element.username} [+${element.profile_votes}]
+            </a>
+        </h4>`
+
+                if (element.image_path != "-") {
+                    comments += '<p style="margin: 2px; color: white; text-decoration: none;"  >' + element.comment + '</p><img src=http://stardash.de:2000/image/' + element.image_path.replaceAll(" ", "SPACESYMBOL") + ' style="width: 100%; max-height: auto; border-radius: 10px"></div>'
+
+                } else {
+                    comments += '<p style="margin: 2px; color: white ; text-decoration: none;" >' + element.comment + '</p></div>'
+                }
+                comments += '<hr class = "hr">'
+            }
+
             });
 
+     
             document.getElementById("comments").innerHTML = comments.replace("undefined", "");
+
+
         })
         .catch(err => console.log(err))
 

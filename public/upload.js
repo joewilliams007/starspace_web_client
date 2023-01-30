@@ -1,4 +1,7 @@
+var session;
+
 function submit() {
+    checkCookie();
     const content = document.getElementById('content').value
     const tags = document.getElementById('tags').value
 
@@ -23,4 +26,25 @@ function submit() {
         console.log("Request complete! response:", res)
         window.location.replace("http://stardash.de:7788");
     });
+}
+
+function getCookie(cname) {
+    let name = cname + "=";
+    let decodedCookie = decodeURIComponent(document.cookie);
+    let ca = decodedCookie.split(';');
+    for(let i = 0; i < ca.length; i++) {
+        let c = ca[i];
+        while (c.charAt(0) == ' ') {
+        c = c.substring(1);
+        }
+        if (c.indexOf(name) == 0) {
+        return c.substring(name.length, c.length);
+        }
+    }
+    return "";
+}
+
+function checkCookie() {
+    user_id = getCookie("user_id");
+    session = getCookie("session");
 }

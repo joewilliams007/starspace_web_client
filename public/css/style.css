@@ -151,5 +151,7 @@ input {
   background-color:#474E68;
   height: 20px;
   animation: overlayMoveUp .5s ease-in;
+  justify-content: end;
+  justify-items: end;
   display: flex;
 }

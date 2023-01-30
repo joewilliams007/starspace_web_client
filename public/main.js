@@ -77,8 +77,8 @@ function checkCookie() {
         .catch(err => console.log(err))
     }
 
-    if (session!="") {
-        document.getElementById("logoutbtn").style.visibility = "hidden"
+    if (session=="") {
+        document.getElementById("logoutbtn").style.display = "none";  //hide
     }
 }
 

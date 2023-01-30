@@ -147,7 +147,7 @@ input {
   bottom: 0px;
   left: 0;
   right: 0;
-  padding: 10px;
+  padding: 2px;
   background-color:#474E68;
   height: 20px;
   animation: overlayMoveUp .5s ease-in;

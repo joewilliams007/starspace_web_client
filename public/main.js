@@ -70,7 +70,7 @@ function account() {
     if (session!="") {
         alert(session)
     } else {
-        this.href="http://stardash.de:7788/login"
+        window.location.replace("http://stardash.de:7788/login");
     }
 }
 

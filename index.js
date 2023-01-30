@@ -33,6 +33,11 @@ app.get("/register", (req, res) => {
     res.sendFile(path.join(__dirname, '/public/register.html'));
 })
 
+app.get("/upload", (req, res) => {
+    res.sendFile(path.join(__dirname, '/public/upload.html'));
+})
+
+
 process.on('uncaughtException', err => {
     console.error(err && err.stack)
 });

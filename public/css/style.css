@@ -149,8 +149,7 @@ input {
   right: 0;
   padding: 10px;
   background-color:#474E68;
-  height: 25px;
+  height: 20px;
   animation: overlayMoveUp .5s ease-in;
   display: flex;
-  align-items: flex-start;
 }

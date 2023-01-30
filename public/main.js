@@ -62,7 +62,15 @@ function checkCookie() {
     session = getCookie("session");
 
     if (Number(user_id)!=NaN) {
-        
+
+    }
+}
+
+function account() {
+    if (session!="") {
+        alert(session)
+    } else {
+        this.href="http://stardash.de:7788/login"
     }
 }
 

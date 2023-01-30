@@ -1,4 +1,6 @@
+var user_id;
 var session;
+
 
 function loaded() {
     checkCookie();
@@ -12,7 +14,7 @@ function submit() {
         return alert("enter your message")
     }
 
-
+    alert(session)
    // setCookie("username", username, 30);
 
     document.getElementById('content').value = ""

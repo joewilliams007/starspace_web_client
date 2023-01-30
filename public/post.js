@@ -1,6 +1,46 @@
+var user_id;
+var session;
+
 function loaded() {
     getItem();
     getComments();
+    checkCookie();
+}
+
+function getCookie(cname) {
+    let name = cname + "=";
+    let decodedCookie = decodeURIComponent(document.cookie);
+    let ca = decodedCookie.split(';');
+    for(let i = 0; i < ca.length; i++) {
+        let c = ca[i];
+        while (c.charAt(0) == ' ') {
+        c = c.substring(1);
+        }
+        if (c.indexOf(name) == 0) {
+        return c.substring(name.length, c.length);
+        }
+    }
+    return "";
+}
+
+function checkCookie() {
+    user_id = getCookie("user_id");
+    session = getCookie("session");
+
+    if (Number(user_id)!=NaN) {
+        fetch("http://stardash.de:2000/profile/"+user_id)
+        .then(response => response.json())
+        .then((response) => {
+            
+            console.log(response)
+            if (response.success == true) {
+                if (response.image == 1) {
+                    document.getElementById("profile_picture").src = "http://stardash.de:2000/image/"+response.image_path;
+                }
+            }
+        })
+        .catch(err => console.log(err))
+    }
 }
 
 function getItem() {

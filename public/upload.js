@@ -1,7 +1,10 @@
 var session;
 
-function submit() {
+function loaded() {
     checkCookie();
+}
+
+function submit() {
     const content = document.getElementById('content').value
     const tags = document.getElementById('tags').value
 

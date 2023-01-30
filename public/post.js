@@ -85,7 +85,8 @@ function getComments() {
 }
 
 function comment() {
-    const content = document.getElementById('comment').value
+    const content = document.getElementById('content').value
+    var post_id = window.location.pathname.split("/")[2]
 
     if (content.length < 1) {
         return alert("enter comment")

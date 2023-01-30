@@ -141,3 +141,16 @@ body {
 input {
     margin: 10px;
 }
+
+.footer-overlay {
+  position: fixed;
+  bottom: 0px;
+  left: 0;
+  right: 0;
+  background-color:#474E68;
+  height: 25px;
+  animation: overlayMoveUp .5s ease-in;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

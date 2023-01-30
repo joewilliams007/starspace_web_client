@@ -73,7 +73,7 @@ function checkCookie() {
                     document.getElementById("profile_picture").src = "http://stardash.de:2000/image/"+response.image_path; 
                 }
             } else {
-                document.getElementById('logoutbtn').style.display = "none";
+                document.getElementById("logoutbtn").style.visibility = "hidden"
             }
         })
         .catch(err => console.log(err))

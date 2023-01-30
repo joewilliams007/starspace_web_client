@@ -84,7 +84,8 @@ function checkCookie() {
 
 function account() {
     if (session!="") {
-        alert(session)
+        //alert(session)
+        window.location.replace("http://stardash.de:7788/profile/"+user_id);
     } else {
         window.location.replace("http://stardash.de:7788/login");
     }

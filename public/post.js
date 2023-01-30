@@ -90,6 +90,7 @@ function comment() {
     if (content.length < 1) {
         return alert("enter comment")
     }
+    document.getElementById('content').value = ""
 
     fetch('http://stardash.de:2000/upload-comment-text', {
         method: 'POST',

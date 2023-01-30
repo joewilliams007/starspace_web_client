@@ -1,9 +1,11 @@
+var user_id;
+var session;
+
 function loaded() {
     // alert('Please leave this page');
     getFeed("latest");
+    checkCookie();
 }
-
-
 
 function getFeed(type) {
     fetch("http://stardash.de:2000/feed/"+type)
@@ -39,8 +41,29 @@ function getFeed(type) {
     .catch(err => console.log(err))
 }
 
-function download() {
-    
+function getCookie(cname) {
+    let name = cname + "=";
+    let decodedCookie = decodeURIComponent(document.cookie);
+    let ca = decodedCookie.split(';');
+    for(let i = 0; i < ca.length; i++) {
+        let c = ca[i];
+        while (c.charAt(0) == ' ') {
+        c = c.substring(1);
+        }
+        if (c.indexOf(name) == 0) {
+        return c.substring(name.length, c.length);
+        }
+    }
+    return "";
+}
+
+function checkCookie() {
+    user_id = getCookie("user_id");
+    session = getCookie("session");
+
+    if (Number(user_id)!=NaN) {
+        
+    }
 }
 
 function openNav() {

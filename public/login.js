@@ -21,9 +21,19 @@ function submit() {
         console.log(response)
         if (response.success == true) {
             alert(response.session)
+
+            setCookie("session", response.session, 90);
+            setCookie("user_id", response.user_id, 90);
         } else {
             alert(response.message)
         }
     })
     .catch(err => console.log(err))
+}
+
+function setCookie(cname,cvalue,exdays) {
+    const d = new Date();
+    d.setTime(d.getTime() + (exdays*24*60*60*1000));
+    let expires = "expires=" + d.toUTCString();
+    document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
 }

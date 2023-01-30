@@ -107,3 +107,12 @@ function logout() {
     document.cookie.split(";").forEach(function(c) { document.cookie = c.replace(/^ +/, "").replace(/=.*/, "=;expires=" + new Date().toUTCString() + ";path=/"); });
     window.location.replace("http://stardash.de:7788/");
 }
+
+function upload() {
+    if (session!="") {
+        //alert(session)
+        window.location.replace("http://stardash.de:7788/upload");
+    } else {
+        window.location.replace("http://stardash.de:7788/login");
+    }
+}

@@ -84,4 +84,22 @@ function getComments() {
 
 }
 
+function comment() {
+    const content = document.getElementById('comment').value
 
+    if (content.length < 1) {
+        return alert("enter comment")
+    }
+
+    fetch('http://stardash.de:2000/upload-comment-text', {
+        method: 'POST',
+        headers: {
+            'Accept': 'application/json',
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ "session": session, "content": content, "post_id": post_id })
+    }).then(res => {
+        console.log("Request complete! response:", res)
+        getComments();
+    });
+}

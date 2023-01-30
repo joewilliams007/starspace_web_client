@@ -1,21 +1,11 @@
-var user_id;
-var session;
-
-
-function loaded() {
-    checkCookie();
-}
-
 function submit() {
     const content = document.getElementById('content').value
     const tags = document.getElementById('tags').value
+    var session = getCookie("session");
 
     if (content.length < 1) {
         return alert("enter your message")
     }
-
-    alert(session)
-   // setCookie("username", username, 30);
 
     document.getElementById('content').value = ""
     document.getElementById('tags').value = ""
@@ -47,9 +37,4 @@ function getCookie(cname) {
         }
     }
     return "";
-}
-
-function checkCookie() {
-    user_id = getCookie("user_id");
-    session = getCookie("session");
 }

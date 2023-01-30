@@ -17,8 +17,13 @@ function submit() {
     fetch("http://stardash.de:2000/login/"+username+"/"+password)
     .then(response => response.json())
     .then((response) => {
-        alert(response.session)
+        
         console.log(response)
+        if (response.success == true) {
+            alert(response.session)
+        } else {
+            alert(response.message)
+        }
     })
     .catch(err => console.log(err))
 }

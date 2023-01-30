@@ -62,7 +62,18 @@ function checkCookie() {
     session = getCookie("session");
 
     if (Number(user_id)!=NaN) {
-
+        fetch("http://stardash.de:2000/profile/"+user_id)
+        .then(response => response.json())
+        .then((response) => {
+            
+            console.log(response)
+            if (response.success == true) {
+                if (response.image == 1) {
+                    document.getElementById("profile_picture").src = response.image_path;
+                }
+            }
+        })
+        .catch(err => console.log(err))
     }
 }
 
